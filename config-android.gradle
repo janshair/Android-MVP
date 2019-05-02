@@ -1,0 +1,40 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: '../dependencies-versions.gradle'
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// COMMON ANDROID CONFIG SETTINGS                                                                 //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+android {
+    compileSdkVersion target_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+                arguments = [
+                        'autovaluegson.defaultCollectionsToEmpty': 'true'
+                ]
+            }
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// COMMON FLAGS                                                                                   //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+androidExtensions {
+    experimental = true
+}

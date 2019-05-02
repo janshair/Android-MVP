@@ -1,0 +1,7 @@
+<resources>
+    <!--Offline Messages-->
+    <string name="offlineMessage">Cannot Load</string>
+    <string name="offlineButtonText">Retry</string>
+    <string name="error_message">Error Displaying Albums</string>
+    <string name="text_retry">Retry</string>
+</resources>

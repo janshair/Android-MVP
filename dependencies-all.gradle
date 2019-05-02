@@ -1,0 +1,108 @@
+def dependencyGroup(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // CORE                                                                                       //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    core = dependencyGroup {
+
+        // Libraries //
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        // Kotlin //
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+        // Guava //
+        implementation "com.google.guava:guava:$guava_version"
+
+        // Timber //
+        implementation "com.jakewharton.timber:timber:$timber_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // SUPPORT                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    support = dependencyGroup {
+
+        // Support Library //
+        implementation "com.android.support:support-compat:$support_library_version"
+        implementation "com.android.support:appcompat-v7:$support_library_version"
+        implementation "com.android.support:cardview-v7:$support_library_version"
+        implementation "com.android.support:recyclerview-v7:$support_library_version"
+        implementation "com.android.support:design:$support_library_version"
+        implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // DAGGER                                                                                     //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    dagger = dependencyGroup {
+
+        // Dagger //
+        implementation "com.google.dagger:dagger:$dagger_version"
+        kapt "com.google.dagger:dagger-compiler:$dagger_version"
+        implementation "com.google.dagger:dagger-android:$dagger_version"
+        implementation "com.google.dagger:dagger-android-support:$dagger_version"
+        kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // RXJAVA                                                                                     //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    rxJava = dependencyGroup {
+
+        // RxJava //
+        implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
+        implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
+
+        //Bindings
+        implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // NETWORKING                                                                                 //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    networking = dependencyGroup {
+
+        // Retrofit //
+        implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+        implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+        // OkHttp //
+        implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+        implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+        // Gson //
+        implementation "com.google.code.gson:gson:$gson_version"
+
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // TESTING                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    testing = dependencyGroup {
+
+        // JUnit //
+        testImplementation("junit:junit:$junit_version") {
+            exclude group: 'org.hamcrest'
+        }
+
+        // Mockito //
+        testImplementation "org.mockito:mockito-core:$mockito_version"
+        testImplementation "org.mockito:mockito-inline:$mockito_version"
+        testImplementation('com.nhaarman:mockito-kotlin-kt1.1:1.5.0') {
+            exclude group: 'org.jetbrains.kotlin'
+        }
+    }
+}
