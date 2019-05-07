@@ -1,10 +1,9 @@
 package com.tapdevs.albums.ui.adapter
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.tapdevs.albums.R
 import com.tapdevs.albums.databinding.RowAlbumBinding
 import com.tapdevs.albums.viewmodel.AlbumViewModel

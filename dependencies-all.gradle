@@ -31,12 +31,12 @@ ext {
     support = dependencyGroup {
 
         // Support Library //
-        implementation "com.android.support:support-compat:$support_library_version"
-        implementation "com.android.support:appcompat-v7:$support_library_version"
-        implementation "com.android.support:cardview-v7:$support_library_version"
-        implementation "com.android.support:recyclerview-v7:$support_library_version"
-        implementation "com.android.support:design:$support_library_version"
-        implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+        implementation "androidx.core:core:$android_x"
+        implementation "androidx.appcompat:appcompat:$android_x"
+        implementation "androidx.cardview:cardview:$android_x"
+        implementation "androidx.recyclerview:recyclerview:$android_x"
+        implementation "com.google.android.material:material:$android_material_design"
+        implementation "androidx.constraintlayout:constraintlayout:$android_x_constraintLayout"
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

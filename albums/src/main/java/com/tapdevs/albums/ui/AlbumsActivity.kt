@@ -1,7 +1,6 @@
 package com.tapdevs.albums.ui
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.jakewharton.rxbinding2.view.RxView
 import com.tapdevs.albums.R
@@ -16,9 +15,6 @@ import javax.inject.Inject
 class AlbumsActivity: BaseActivity(), AlbumsPresenter.View{
 
     @Inject lateinit var albumsPresenter: AlbumsPresenter
-
-    @Inject lateinit var layoutManager: LinearLayoutManager
-
 
     override val layoutResourceId: Int
         get() = R.layout.activity_albums
@@ -39,7 +35,6 @@ class AlbumsActivity: BaseActivity(), AlbumsPresenter.View{
     }
 
     override fun updateList(albumsList: List<Album>) {
-        rvAlbums.layoutManager = layoutManager
         rvAlbums.adapter = AlbumsAdapter().apply { setItems(albumsList) }
     }
 

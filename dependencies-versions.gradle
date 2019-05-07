@@ -4,7 +4,7 @@ ext {
     // BUILD                                                                                      //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    kotlin_version = '1.3.21'
+    kotlin_version = '1.3.31'
     gradle_version = '3.3.1'
     build_tools_version = "28.0.3"
     min_sdk_version = 21
@@ -14,7 +14,10 @@ ext {
     // RELEASE                                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    support_library_version = '27.0.0'
+    support_library_version = '28.0.0'
+    android_x = '1.0.0'
+    android_x_constraintLayout = '1.1.2'
+    android_material_design = '1.0.0-rc01'
     play_services_version = '11.4.2'
     kotlin_coroutines_version = '0.19.3'
     guava_version = '23.1-android'

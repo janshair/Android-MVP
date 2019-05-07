@@ -5,9 +5,9 @@ import com.tapdevs.base.injection.BaseModule
 import com.tapdevs.base.network.injection.NetworkModule
 import com.tapdevs.myalbums.MyAlbumsApp
 import dagger.BindsInstance
-import dagger.Component
 import dagger.android.AndroidInjectionModule
 import com.tapdevs.base.injection.scopes.PerApplication
+import dagger.Component
 
 @PerApplication
 @Component(modules = [

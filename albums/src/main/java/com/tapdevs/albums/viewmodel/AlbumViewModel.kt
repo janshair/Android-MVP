@@ -1,6 +1,6 @@
 package com.tapdevs.albums.viewmodel
 
-import android.databinding.BaseObservable
+import androidx.databinding.BaseObservable
 import com.tapdevs.base.network.model.Album
 
 class AlbumViewModel: BaseObservable() {

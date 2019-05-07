@@ -1,8 +1,8 @@
 package com.tapdevs.base.ui
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
 
 abstract class BaseActivity: AppCompatActivity() {
