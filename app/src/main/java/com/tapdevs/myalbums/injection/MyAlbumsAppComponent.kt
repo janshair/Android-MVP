@@ -25,7 +25,6 @@ interface MyAlbumsAppComponent {
         fun application(application: Application): Builder
 
         fun build(): MyAlbumsAppComponent
-
     }
 
     fun inject(app: MyAlbumsApp)

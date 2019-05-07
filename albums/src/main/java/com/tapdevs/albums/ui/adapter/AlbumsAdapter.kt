@@ -9,7 +9,7 @@ import com.tapdevs.albums.databinding.RowAlbumBinding
 import com.tapdevs.albums.viewmodel.AlbumViewModel
 import com.tapdevs.base.network.model.Album
 
-class AlbumsAdapter(): RecyclerView.Adapter<AlbumsAdapter.BindingHolder>() {
+class AlbumsAdapter : RecyclerView.Adapter<AlbumsAdapter.BindingHolder>() {
 
     var albums: List<Album> = listOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumsAdapter.BindingHolder {
@@ -27,15 +27,14 @@ class AlbumsAdapter(): RecyclerView.Adapter<AlbumsAdapter.BindingHolder>() {
     }
 
     override fun onBindViewHolder(holder: BindingHolder, position: Int) {
-        val rowAlbumBinding : RowAlbumBinding = holder.binding
+        val rowAlbumBinding: RowAlbumBinding = holder.binding
         rowAlbumBinding.viewModel = AlbumViewModel()
         rowAlbumBinding.album = albums[position]
         rowAlbumBinding.executePendingBindings()
-
     }
 
-    fun setItems(albums: List<Album>){
-        this.albums=albums
+    fun setItems(albums: List<Album>) {
+        this.albums = albums
         notifyDataSetChanged()
     }
     inner class BindingHolder(binding: RowAlbumBinding) : RecyclerView.ViewHolder(binding.containerItem) {

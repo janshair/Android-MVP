@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
-class AlbumsPresenterTest: BasePresenterTest<AlbumsPresenter, AlbumsPresenter.View>() {
+class AlbumsPresenterTest : BasePresenterTest<AlbumsPresenter, AlbumsPresenter.View>() {
 
     private val publishSubject: PublishSubject<Any> = PublishSubject.create<Any>()
 

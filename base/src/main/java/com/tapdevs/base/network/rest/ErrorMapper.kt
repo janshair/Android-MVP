@@ -29,7 +29,7 @@ class ErrorMapper(
             }
 
             val restError = gson.fromJson(errorBody, RestError::class.java)
-            return restError.getError(listOf() ,throwable)
+            return restError.getError(listOf(), throwable)
         }
         return throwable
     }

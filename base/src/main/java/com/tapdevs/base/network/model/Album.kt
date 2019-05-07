@@ -2,7 +2,6 @@ package com.tapdevs.base.network.model
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class Album(
@@ -13,7 +12,7 @@ data class Album(
     var id: Int,
     @SerializedName("title")
     var title: String
-): Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readInt(),

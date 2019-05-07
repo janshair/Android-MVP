@@ -2,7 +2,6 @@ package com.tapdevs.myalbums
 
 import android.app.Activity
 import android.app.Application
-import android.os.StrictMode
 import com.tapdevs.myalbums.injection.DaggerMyAlbumsAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

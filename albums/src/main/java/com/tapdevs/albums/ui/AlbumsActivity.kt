@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_albums.*
 import kotlinx.android.synthetic.main.view_offline.*
 import javax.inject.Inject
 
-class AlbumsActivity: BaseActivity(), AlbumsPresenter.View{
+class AlbumsActivity : BaseActivity(), AlbumsPresenter.View {
 
     @Inject lateinit var albumsPresenter: AlbumsPresenter
 

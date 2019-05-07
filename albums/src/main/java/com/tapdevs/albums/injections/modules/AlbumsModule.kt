@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module(includes = [AlbumsModule.View::class])
-class AlbumsModule{
+class AlbumsModule {
 
     @Module
     class View {

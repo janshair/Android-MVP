@@ -39,7 +39,6 @@ class NetworkModule {
     @NamedScheduler(NamedScheduler.SchedulerType.IO)
     fun provideScheduler(): Scheduler = Schedulers.io()
 
-
     @Provides
     @PerApplication
     @NamedScheduler(NamedScheduler.SchedulerType.UI)
@@ -62,16 +61,13 @@ class NetworkModule {
 
     @Provides
     @PerApplication
-    fun provideAlbumsApi(builder: Retrofit.Builder,
-                         okHttpClientBuilder: OkHttpClient.Builder,
-                         httpLoggingInterceptor: HttpLoggingInterceptor,
-                         converterFactory: Converter.Factory): Retrofit {
-//        if (BuildConfig.DEBUG) {
-//            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
-//            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-//            okHttpClientBuilder.addNetworkInterceptor(httpLoggingInterceptor)
-//        }
-        return Retrofit.Builder()
+    fun provideAlbumsApi(builder: Retrofit.Builder, okHttpClientBuilder: OkHttpClient.Builder, httpLoggingInterceptor: HttpLoggingInterceptor, converterFactory: Converter.Factory): Retrofit {
+        if (BuildConfig.DEBUG) {
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            okHttpClientBuilder.addNetworkInterceptor(httpLoggingInterceptor)
+        }
+        return builder
                 .baseUrl(BuildConfig.BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(converterFactory)

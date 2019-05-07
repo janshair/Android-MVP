@@ -14,6 +14,5 @@ class RestClientAlbums(retrofit: Retrofit, private val errorMapper: ErrorMapper)
             .onErrorResumeNext { throwable ->
                 Single.error(errorMapper.mapErrorToException(throwable))
             }
-
     }
 }
