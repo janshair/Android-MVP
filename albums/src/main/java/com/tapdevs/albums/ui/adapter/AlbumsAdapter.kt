@@ -1,47 +1,45 @@
 package com.tapdevs.albums.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tapdevs.albums.R
-import com.tapdevs.albums.databinding.RowAlbumBinding
-import com.tapdevs.albums.viewmodel.AlbumViewModel
 import com.tapdevs.base.network.model.Album
+import kotlinx.android.synthetic.main.row_album.view.*
 
-class AlbumsAdapter : RecyclerView.Adapter<AlbumsAdapter.BindingHolder>() {
+class AlbumsAdapter : RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>() {
 
     var albums: List<Album> = listOf()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumsAdapter.BindingHolder {
-        val rowAlbumBinding: RowAlbumBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context),
-            R.layout.row_album,
-            parent,
-            false
-        )
-        return BindingHolder(rowAlbumBinding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumsAdapter.AlbumViewHolder {
+        return AlbumViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.row_album, parent, false))
     }
 
     override fun getItemCount(): Int {
         return albums.size
     }
 
-    override fun onBindViewHolder(holder: BindingHolder, position: Int) {
-        val rowAlbumBinding: RowAlbumBinding = holder.binding
-        rowAlbumBinding.viewModel = AlbumViewModel()
-        rowAlbumBinding.album = albums[position]
-        rowAlbumBinding.executePendingBindings()
+    override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
+        val album: Album = albums[position]
+        holder.albumID.text = album.id.toString()
+        holder.userID.text = album.userId.toString()
+        holder.title.text = album.title
     }
 
     fun setItems(albums: List<Album>) {
         this.albums = albums
         notifyDataSetChanged()
     }
-    inner class BindingHolder(binding: RowAlbumBinding) : RecyclerView.ViewHolder(binding.containerItem) {
-        val binding: RowAlbumBinding
-
+    inner class AlbumViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var albumID: TextView
+        var userID: TextView
+        var title: TextView
         init {
-            this.binding = binding
+            albumID = view.albumID
+            userID = view.albumID
+            title = view.albumID
         }
     }
 }
