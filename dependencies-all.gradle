@@ -36,9 +36,6 @@ ext {
         // Kotlin //
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-        // Guava //
-        implementation "com.google.guava:guava:$guava_version"
-
         // Timber //
         implementation "com.jakewharton.timber:timber:$timber_version"
 
