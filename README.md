@@ -1,6 +1,4 @@
-# Branches 
 
- 1. MVP
 
 # 1. Base
 
@@ -31,5 +29,16 @@ Contains group of dependencies.
 4. dependencies-versions.gradle
 
 Contains dependencies version.
+
+# Libraries Used
+
+1. RxJava
+2. Android Architecture Components(AndroidX, Lifecycle, LiveData, ViewModel)
+3. Retrofit, OkHttp, Gson
+4. Dagger 2 (Dependency Injection)
+5. Mockito
+6. Junit(For unit tests)
+7. Ktlint(For lint fixes)
+6. Timber(For Logging)
 
 In case you have any question, please let me know.
